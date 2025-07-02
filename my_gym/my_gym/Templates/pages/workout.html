@@ -1,0 +1,69 @@
+{% extends 'pages/base.html' %}
+
+{% block content %}
+<h1>Track Your Workout Exercises!</h1>
+
+<form action="/workout" method="POST">
+    {% csrf_token %}
+
+    <table style="margin: auto; text-align: center; background-color: cyan;" border="1">
+        <tr>
+            <th>Exercise</th>
+            <th>Your Number of Reps</th>
+            <th>Ideal Number of Reps</th>
+            <th>Your Number of Sets</th>
+            <th>Ideal Number of Sets</th>
+        </tr>
+        <tr>
+            <td>Squats</td>
+            <td><input type="number" name="val1"></td>
+            <td>/15</td>
+            <td><input type="number" name="val2"></td>
+            <td>/3</td>
+        </tr>
+        <tr>
+            <td>Bicep Curls</td>
+            <td><input type="number" name="val3"></td>
+            <td>/12</td>
+            <td><input type="number" name="val4"></td>
+            <td>/3</td>
+        </tr>
+        <tr>
+            <td>Tricep Dips</td>
+            <td><input type="number" name="val5"></td>
+            <td>/15</td>
+            <td><input type="number" name="val6"></td>
+            <td>/3</td>
+        </tr>
+        <tr>
+            <td>Bench Press</td>
+            <td><input type="number" name="val7"></td>
+            <td>/15</td>
+            <td><input type="number" name="val8"></td>
+            <td>/2</td>
+        </tr>
+        <tr>
+            <td>Deadlift</td>
+            <td><input type="number" name="val9"></td>
+            <td>/15</td>
+            <td><input type="number" name="val10"></td>
+            <td>/3</td>
+        </tr>
+        <tr>
+            <td>Shoulder Press</td>
+            <td><input type="number" name="val11"></td>
+            <td>/12</td>
+            <td><input type="number" name="val12"></td>
+            <td>/3</td>
+        </tr>
+    </table>
+
+    <div style="text-align: center; margin-top: 10px;">
+        <input type="submit" value="Evaluate My Workout">
+    </div>
+</form>
+
+<p style="color: red; text-align: center;">
+    {{ msg }}
+</p>
+{% endblock %}

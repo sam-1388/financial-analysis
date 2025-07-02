@@ -1,0 +1,18 @@
+{% extends 'pages/base.html' %}
+
+{%block head%}
+<h1>enter a new account!!</h1>
+{%endblock%}
+
+{%block content%}
+
+<form action="/register" method="POST">
+    
+    {% csrf_token %}
+    {{form}}
+<input type="submit" value="sign up">
+</form>
+<p style="color: red;">
+    {{msg}}
+</p>
+{%endblock%}
